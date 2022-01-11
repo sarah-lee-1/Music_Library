@@ -1,29 +1,48 @@
+// display (song title, album, artist, genre & release date) 
+// from the API within a table on the frontend.
+
+import React, { useState } from 'react':
+import './DisplayMusic.css';
 
 const DisplayMusic = (props) => {
-    return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Genre</th>
-                    <th>Artist</th>
-                    <th>Album</th>
-                    <th>Song Title</th>
-                    <th>Release Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                {props.parentEntries.map((entry, index) => {
-                    return (
-                        <td>{entry.genre}</td>
-                        <td>{entry.artist}</td>
-                        <td>{entry.album}</td>
-                        <td>entry.songTitle</td>
-                        <td>{entry.releaseDate}</td>
-                    );
-                })}
 
-            </tbody>
-        </table>
+    const [genre, setName] = useState('');
+    const [artist, setName] = useState('');
+    const [album, setName] = useState('');
+    const [songTitle, setName] = useState('');
+    const [releaseDate, setName] = useState('');
+
+    function handleSubmit(event) {
+       event.preventDefault();
+       let newSong = {
+           allMusic: allMusic,
+           genre: genre,
+           artist: artist,
+           album: album,
+           songTitle: songTitle,
+           releaseDate: releaseDate,  
+       } 
+           console.log(newSong);
+           props.addNewSong(newSong) 
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>All Music</label>
+            <input type='name'></input>
+            <label>Genre</label>
+            <input type='name'></input>
+            <label>Artist</label>
+            <input type='name'></input>
+            <label>Album</label>
+            <input type='name'></input>
+            <label>Song Title</label>
+            <input type='paragraph'></input>
+            <label>Release Date</label>
+            <input type='date'></input>
+        </form>
     )
 
 }
+
+export default DisplayMusic; 

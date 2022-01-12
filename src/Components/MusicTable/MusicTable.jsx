@@ -14,11 +14,13 @@ const MusicTable = (props) => {
             <tbody>
                 {props.parentEntries.map((entry, index) => {
                     return (
-                        <td>{entry.genre}</td>
-                        <td>{entry.artist}</td>
-                        <td>{entry.album}</td>
-                        <td>entry.songTitle</td>
-                        <td>{entry.releaseDate}</td>
+                        <tr>
+                            <td>{entry.genre}</td>
+                            <td>{entry.artist}</td>
+                            <td>{entry.album}</td>
+                            <td>{entry.title}</td>
+                            <td>{entry.releaseDate}</td>
+                        </tr>
                     );
                 })}
 

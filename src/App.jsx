@@ -21,7 +21,13 @@ function App() {
       await getAllSongs;
     } 
   };
-
+  return (
+    <div>
+      {/* <NavigationBar/> */}
+      <SearchBar/>
+      
+    </div>
+  )
 
 
 }

@@ -1,7 +1,4 @@
-// display (song title, album, artist, genre & release date) 
-// from the API within a table on the frontend.
-
-import React, { useState } from 'react':
+import React, { useState } from 'react';
 import './DisplayMusic.css';
 
 const DisplayMusic = (props) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DisplayMusic.css';
 
-const DisplayMusic = (props) => {
+const CreateSong = (props) => {
 
     const [genre, setName] = useState('');
     const [artist, setName] = useState('');
@@ -12,34 +12,34 @@ const DisplayMusic = (props) => {
     function handleSubmit(event) {
        event.preventDefault();
        let newSong = {
-           allMusic: allMusic,
-           genre: genre,
-           artist: artist,
-           album: album,
-           songTitle: songTitle,
-           releaseDate: releaseDate,  
+            songTitle: songTitle,
+            artist: artist,
+            album: album,
+            genre: genre,
+            releaseDate: releaseDate,  
        } 
-           console.log(newSong);
-           props.addNewSong(newSong) 
+            console.log(newSong);
+            props.addNewSong(newSong) 
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>All Music</label>
-            <input type='name'></input>
-            <label>Genre</label>
-            <input type='name'></input>
+            <label>Song Title</label>
+            <input type='paragraph'></input>
             <label>Artist</label>
             <input type='name'></input>
             <label>Album</label>
             <input type='name'></input>
-            <label>Song Title</label>
-            <input type='paragraph'></input>
+            <label>Genre</label>
+            <input type='name'></input>
             <label>Release Date</label>
             <input type='date'></input>
+            <button onclick={AddNew(CreateSong)}>
+                <Add Song/>
+            </button>
         </form>
     )
 
 }
 
-export default DisplayMusic; 
+export default CreateSong; 

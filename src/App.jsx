@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchBar from './Components/SearchBar';
 import DisplayMusic from './Components/AllMusic';  
+import CreateSong from './Components/NewSong/NewSong';
 
 // import NavigationBar from './Components/NavigationBar';
 
@@ -30,6 +31,8 @@ function App() {
       {/* <NavigationBar/> */}
       <SearchBar/>
       <DisplayMusic parentEntries={getAllSongs}/>
+      <NewSong parentEntries={createSong}/> 
+
       
     </div>
   )

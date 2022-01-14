@@ -1,8 +1,12 @@
+import './styles.css'; 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SearchBar from './Components/SearchBar';
+import DisplayMusic from './Components/AllMusic';  
+
+// import NavigationBar from './Components/NavigationBar';
 
 function App() {
-
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
@@ -10,13 +14,13 @@ function App() {
   }, [])
 
   async function getAllSongs() {
-    let response = await axios.get('http://www.devcodecampmusiclibrary.com');
+    let response = await axios.get('http://127.0.0.1:8000/music/');
     setSongs(response.data); 
   };
 
 
   async function createSong() {
-    let response = await axios.get('http://www.devcodecampmusiclibrary.com', newSong);
+    let response = await axios.get('http://127.0.0.1:8000/music/', newSong);
     if(response.status === 201) {
       await getAllSongs;
     } 
@@ -25,6 +29,7 @@ function App() {
     <div>
       {/* <NavigationBar/> */}
       <SearchBar/>
+      <DisplayMusic parentEntries={getAllSongs}/>
       
     </div>
   )

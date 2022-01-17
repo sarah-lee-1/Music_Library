@@ -5,6 +5,7 @@ import React, {useState} from "react";
 const LikeButton = () => {
     const [state, setState] = useState();
     const [status, setStatus] = useState('');
+    const [count, setCount] = useState(0);
 
     function like() {
         setState(true);
@@ -19,16 +20,20 @@ const LikeButton = () => {
     }
     
     return ( 
-        <>
-                
-        <button onClick={like} className={'toggle--button '+ (state ? 'toggle--Like': 'toggle--Unlike')}>
+        <>  
+        <button onClick={like()=>setCount(count+1)}/> 
+        className={'toggle--button '+ 
+        (state ? 'toggle--Like': 'toggle--Unlike')}>
             Like 👍
         </button>
-        <h5>{status}</h5>
-        <button onClick={dislike} className={'toggle--button '+ (state ? 'toggle--Like': 'toggle--Unlike')}>
+        <h5>{count}</h5>
+
+        <button onClick={dislike()=>setCount(count+1)}/> 
+        className={'toggle--button '+ 
+        (state ? 'toggle--Like': 'toggle--Unlike')}>
             Dislike 👎
         </button>
-
+        <h5>{count}</h5> 
         </>
     );
 }

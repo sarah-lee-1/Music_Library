@@ -1,11 +1,11 @@
 import './styles.css'; 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import NavigationBar from './Components/NavigationBar';
 import DisplayMusic from './Components/AllMusic';  
 import CreateSong from './Components/NewSong/NewSong';
 import UpdateSong from './Components/UpdateMusic/UpdateMusic';
 import SearchSong from './Components/SearchMusic/SearchMusic'; 
-import NavigationBar from './Components/NavigationBar';
 
 function App() {
   const [songs, setSongs] = useState([]);

@@ -4,10 +4,10 @@ const DisplayMusic = (props) => {
         <table>
             <thead>
                 <tr>
-                    <th>Genre</th>
+                    <th>Song Title</th>
                     <th>Artist</th>
                     <th>Album</th>
-                    <th>Song Title</th>
+                    <th>Genre</th>
                     <th>Release Date</th>
                 </tr>
             </thead>
@@ -15,10 +15,10 @@ const DisplayMusic = (props) => {
                 {props.parentEntries.map((entry, index) => {
                     return (
                         <tr>
-                            <td>{entry.genre}</td>
+                            <td>{entry.title}</td>
                             <td>{entry.artist}</td>
                             <td>{entry.album}</td>
-                            <td>{entry.title}</td>
+                            <td>{entry.genre}</td>
                             <td>{entry.releaseDate}</td>
                         </tr>
                     );

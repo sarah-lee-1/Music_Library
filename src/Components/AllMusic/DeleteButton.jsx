@@ -2,11 +2,11 @@ import React, {useState} from "react";
 // import "./styles.css"; 
 
 const DeleteBtn = () => {
-    const [state, setState] = useState(); 
+    // const [state, setState] = useState(); 
 
-    function like() {
-        setState(delete);
-    }
+    // function deleteSong(id) {
+    //     setState(delete);
+    // }
     
     return ( 
         <>   

@@ -3,17 +3,17 @@ import { useReducer } from "react";
 import LikeButton from "./LikeButton";
 import Deletebtn from "./DeleteButton" 
 
-deleteBtn(musicId); {
-    if(deleteMsg.confirm('Do you want to delete this entry? '))
-    {
-       fetch('http://127.0.0.1:8000/music/song/' + id,{
-           method: 'DELETE', 
-           header: {'Accept': 'application/json', 
-           'Content-Type': 'application/json',  
-        }
-       }) 
-    }
-}
+// deleteBtn(Id); {
+//     if(deleteMsg.confirm('Do you want to delete this entry? '))
+//     {
+//        fetch('http://127.0.0.1:8000/music/song/' + id,{
+//            method: 'DELETE', 
+//            header: {'Accept': 'application/json', 
+//            'Content-Type': 'application/json',  
+//         }
+//        }) 
+//     }
+// }
 
 const DisplayMusic = (props) => {
     return (
@@ -36,6 +36,7 @@ const DisplayMusic = (props) => {
                             <td>{entry.album}</td>
                             <td>{entry.genre}</td>
                             <td>{entry.releaseDate}</td>
+                            <button>Like</button>
                             <button>Delete</button>
                         </tr>
                     );

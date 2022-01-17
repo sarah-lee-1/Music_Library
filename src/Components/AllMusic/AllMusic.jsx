@@ -1,13 +1,13 @@
 
 import { useReducer } from "react";
 import LikeButton from "./LikeButton";
-import DeleteButton from "./DeleteButton"; 
+import Deletebtn from "./DeleteButton" 
 
-deleteButton(musicId) {
+deleteBtn(musicId); {
     if(deleteMsg.confirm('Do you want to delete this entry? '))
     {
-       fetch('http://127.0.0.1:8000/music/song/' +id{
-           method: 'DELETE'
+       fetch('http://127.0.0.1:8000/music/song/' + id,{
+           method: 'DELETE', 
            header: {'Accept': 'application/json', 
            'Content-Type': 'application/json',  
         }

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 // import likebutton.css
 // import "./styles.css"; 
 
-const LikeButton = () => {
+const LikeBtn = () => {
     const [state, setState] = useState();
     const [status, setStatus] = useState('');
     const [count, setCount] = useState(0);
@@ -38,4 +38,4 @@ const LikeButton = () => {
     );
 }
 
-export default LikeButton 
+export default LikeBtn 

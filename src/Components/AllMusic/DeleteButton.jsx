@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-// import likebutton.css
 // import "./styles.css"; 
 
-const DeleteButton = () => {
+const DeleteBtn = () => {
     const [state, setState] = useState(); 
 
     function like() {
@@ -22,4 +21,4 @@ const DeleteButton = () => {
     );
 }
 
-export default DeleteButton; 
+export default DeleteBtn; 

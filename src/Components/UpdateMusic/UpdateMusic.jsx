@@ -34,9 +34,7 @@ const UpdateSong = (props) => {
             <input type='name'></input>
             <label>Release Date</label>
             <input type='date'></input>
-            <button onclick={Update(UpdateSong)}>
-                <Update Song/>
-            </button>
+            <button type='submit' className='btn btn-primary' >Update</button>
         </form>
     )
 

@@ -3,10 +3,10 @@ import './DisplayMusic.css';
 
 const CreateSong = (props) => {
 
-    const [genre, setName] = useState('');
+    const [songTitle, setName] = useState('');
     const [artist, setName] = useState('');
     const [album, setName] = useState('');
-    const [songTitle, setName] = useState('');
+    const [genre, setName] = useState('');
     const [releaseDate, setName] = useState('');
 
     function handleSubmit(event) {
@@ -34,9 +34,7 @@ const CreateSong = (props) => {
             <input type='name'></input>
             <label>Release Date</label>
             <input type='date'></input>
-            <button onclick={AddNew(CreateSong)}>
-                <Add Song/>
-            </button>
+            <button type='submit' className='btn btn-primary' >Add</button>
         </form>
     )
 

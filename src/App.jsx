@@ -1,7 +1,6 @@
 import './styles.css'; 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SearchBar from './Components/SearchMusic';
 import DisplayMusic from './Components/AllMusic';  
 import CreateSong from './Components/NewSong/NewSong';
 import UpdateSong from './Components/UpdateMusic/UpdateMusic';

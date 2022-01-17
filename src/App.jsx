@@ -1,4 +1,4 @@
-import './styles.css'; 
+// import './styles.css'; 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from './Components/NavigationBar';

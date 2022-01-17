@@ -1,5 +1,4 @@
 
-
 const NavigationBar = (props) => {
     return (
         <nav>

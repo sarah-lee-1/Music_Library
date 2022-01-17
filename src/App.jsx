@@ -5,6 +5,7 @@ import SearchBar from './Components/SearchMusic';
 import DisplayMusic from './Components/AllMusic';  
 import CreateSong from './Components/NewSong/NewSong';
 import UpdateSong from './Components/UpdateMusic/UpdateMusic';
+import SearchSong from './Components/SearchMusic/SearchMusic'; 
 
 // import NavigationBar from './Components/NavigationBar';
 
@@ -20,24 +21,36 @@ function App() {
     setSongs(response.data); 
   };
 
-
   async function createSong() {
     let response = await axios.get('http://127.0.0.1:8000/music/', newSong);
     if(response.status === 201) {
       await getAllSongs;
     } 
   };
+
+  async function searchSong() {
+    let response = await axios.get('http://127.0.0.1:8000/music/', newSong);
+    if(response.status === 201) {
+      await getAllSongs;
+    } 
+  };
+
+  async function updateSong() {
+    let response = await axios.get('http://127.0.0.1:8000/music/', newSong);
+    if(response.status === 201) {
+      await getAllSongs;
+    } 
+  };
+
   return (
     <div>
       {/* <NavigationBar/> */}
-      <SearchBar/>
       <DisplayMusic parentEntries={getAllSongs}/>
       <NewSong parentEntries={createSong}/> 
-
-      
+      <SearchMusic parentEntries={searchSong}/>
+      <UpdateMusic parentEntries={updateSong}/> 
     </div>
   )
-
 
 }
 

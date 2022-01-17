@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div>
-      {/* <NavigationBar/> */}
+      <NavigationBar/>
       <DisplayMusic parentEntries={getAllSongs}/>
       <NewSong parentEntries={createSong}/> 
       <SearchMusic parentEntries={searchSong}/>

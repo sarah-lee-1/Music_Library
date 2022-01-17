@@ -1,7 +1,7 @@
 
 import { useReducer } from "react";
 import LikeButton from "./LikeButton";
-import Deletebtn from "./DeleteButton" 
+import Deletebtn from "./DeleteButton"
 
 // deleteBtn(Id); {
 //     if(deleteMsg.confirm('Do you want to delete this entry? '))
@@ -30,14 +30,17 @@ const DisplayMusic = (props) => {
             <tbody>
                 {props.parentEntries.map((entry, index) => {
                     return (
-                        <tr>
+                        <tr key={entry.id}>
                             <td>{entry.title}</td>
                             <td>{entry.artist}</td>
                             <td>{entry.album}</td>
                             <td>{entry.genre}</td>
-                            <td>{entry.releaseDate}</td>
+                            <td>{entry.release_date}</td>
                             <button>Like</button>
-                            <button>Delete</button>
+                            <button onClick={() =>
+                                props.deleteSong(entry.id)}
+                                variant="danger"
+                                className="mr-2">Delete</button>
                         </tr>
                     );
                 })}

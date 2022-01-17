@@ -2,20 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DisplayMusic from './Components/AllMusic/AllMusic';
-
-import CreateSong from './Components/NewSong/NewSong';
+import NavBar from './Components/NavigationBar/NavigationBar';
+import NewSong from './Components/NewSong/NewSong';
 import UpdateSong from './Components/UpdateMusic/UpdateMusic';
 import SearchSong from './Components/SearchMusic/SearchMusic'; 
-import NavBar from './Components/NavigationBar/NavigationBar';
+
 
 function App() {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    getAllSongs();
-    createSong();
-    searchSong();
-    updateSong(); 
+    getAllSongs(); 
   }, [])
 
   async function getAllSongs() {
@@ -23,10 +20,10 @@ function App() {
     setSongs(response.data); 
   };
 
-  async function createSong() {
-    let response = await axios.get('http://127.0.0.1:8000/music/', createSong);
+  async function createSong(newSong) {
+    let response = await axios.get('http://127.0.0.1:8000/music/', newSong);
     if(response.status === 201) {
-      await getAllSongs;
+      await getAllSongs();
     } 
   };
 
@@ -44,21 +41,23 @@ function App() {
     } 
   };
 
-  async function deleteBtn(id) {
-    let response = await axios.get('http://127.0.0.1:8000/music/', deleteBtn);
-    if(deleteMsg.confirm('Do you want to delete this entry? '))
-    if(response.status === 201) {
-      await getAllSongs;
+  async function deleteSong(id) {
+    console.log("App.js ID: ", id)
+    let response = await axios.delete(`http://127.0.0.1:8000/music/${id}/`);
+    // if(deleteMsg.confirm('Do you want to delete this entry? '))
+    if(response.status === 204) {
+      console.log("song deleted!")
+    await getAllSongs();
     } 
   };
 
   return (
     <div>
-      <NavigationBar/>
-      <DisplayMusic parentEntries={getAllSongs}/>
-      <NewSong parentEntries={createSong}/> 
-      <SearchMusic parentEntries={searchSong}/>
-      <UpdateMusic parentEntries={updateSong}/> 
+      <NavBar/>
+      <DisplayMusic parentEntries={songs} deleteSong={deleteSong}/>
+      {/* <NewSong parentEntries={createSong}/> 
+      <SearchSong parentEntries={searchSong}/>
+      <UpdateSong parentEntries={updateSong}/>  */}
     </div>
   )
 

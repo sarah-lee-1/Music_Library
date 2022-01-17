@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CreateSong = (props) => {
+const NewSong = (props) => {
 
     const [songTitle, setSongTitle] = useState('');
     const [artist, setArtist] = useState('');
@@ -39,4 +39,4 @@ const CreateSong = (props) => {
 
 }
 
-export default CreateSong; 
+export default NewSong; 

@@ -10,13 +10,12 @@ const DeleteBtn = () => {
     
     return ( 
         <>   
-        <button onClick={() => 
-            this.deleteSong (Song.Id)} 
+        <button 
             variant="danger" 
             className="mr-2">
             Delete 🤜🏻
         </button>
-        <h5>{status}</h5> 
+        <h5>Delete Button</h5> 
         </>
     );
 }

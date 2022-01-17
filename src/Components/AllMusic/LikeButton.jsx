@@ -19,22 +19,20 @@ const LikeBtn = () => {
 
     }
     
-    return ( 
-        <>  
-        <button onClick={like()=>setCount(count+1)}/> 
-        className={'toggle--button '+ 
-        (state ? 'toggle--Like': 'toggle--Unlike')}>
-            Like 👍
-        </button>
-        <h5>{count}</h5>
+    return (  
+        // <button onClick={like() => setCount(count+1)}/> 
+        // className={'toggle--button '+ 
+        // (state ? 'toggle--Like': 'toggle--Unlike')}>
+        //     Like 👍
+        // </button>
+        // <h5>{coutionnt}</h5>
 
-        <button onClick={dislike()=>setCount(count+1)}/> 
-        className={'toggle--button '+ 
-        (state ? 'toggle--Like': 'toggle--Unlike')}>
-            Dislike 👎
-        </button>
+        // <button onClick={dislike() => setCount(count+1)}/> 
+        // className={'toggle--button '+ 
+        // (state ? 'toggle--Like': 'toggle--Unlike')}>
+        //     Dislike 👎
+        // </button>
         <h5>{count}</h5> 
-        </>
     );
 }
 

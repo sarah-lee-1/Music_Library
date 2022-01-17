@@ -37,9 +37,7 @@ const SearchSong = (props) => {
                   <td>{entry.album}</td>
                   <td>{entry.genre}</td>
                   <td>{entry.releaseDate}</td>
-                  <td><DeleteButton/></td>
-                  <td><LikeButton/></td>
-                  <td><DislikeButton/></td>
+
                   </tr>
               );
             })}

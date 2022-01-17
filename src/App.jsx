@@ -13,6 +13,9 @@ function App() {
 
   useEffect(() => {
     getAllSongs();
+    createSong();
+    searchSong();
+    updateSong(); 
   }, [])
 
   async function getAllSongs() {

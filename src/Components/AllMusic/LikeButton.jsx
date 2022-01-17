@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-
 // import likebutton.css
 // import "./styles.css"; 
 
@@ -23,11 +22,11 @@ const LikeButton = () => {
         <>
                 
         <button onClick={like} className={'toggle--button '+ (state ? 'toggle--Like': 'toggle--Unlike')}>
-            Like 😍
+            Like 👍
         </button>
         <h5>{status}</h5>
         <button onClick={dislike} className={'toggle--button '+ (state ? 'toggle--Like': 'toggle--Unlike')}>
-            Dislike 😕
+            Dislike 👎
         </button>
 
         </>

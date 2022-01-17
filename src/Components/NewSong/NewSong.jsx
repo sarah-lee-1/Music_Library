@@ -3,11 +3,11 @@ import './DisplayMusic.css';
 
 const CreateSong = (props) => {
 
-    const [songTitle, setName] = useState('');
-    const [artist, setName] = useState('');
-    const [album, setName] = useState('');
-    const [genre, setName] = useState('');
-    const [releaseDate, setName] = useState('');
+    const [songTitle, setSongTitle] = useState('');
+    const [artist, setArtist] = useState('');
+    const [album, setAlbum] = useState('');
+    const [genre, setGenre] = useState('');
+    const [releaseDate, setReleaseDate] = useState('');
 
     function handleSubmit(event) {
        event.preventDefault();

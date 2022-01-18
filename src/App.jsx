@@ -20,7 +20,6 @@ function App() {
   };
 
   async function createSong(newSong) {
-    console.log('new song')
     let response = await axios.post('http://127.0.0.1:8000/music/', newSong);
     if(response.status === 201) {
       console.log("New Song Created!")

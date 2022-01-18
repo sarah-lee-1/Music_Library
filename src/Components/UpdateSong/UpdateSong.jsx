@@ -8,6 +8,11 @@ const UpdateSong = (props) => {
     const [album, setAlbum] = useState('');
     const [genre, setGenre] = useState('');
     const [releaseDate, setReleaseDate] = useState('');
+    
+    function handleChange(event){
+        this.setState({value: event.target.value});
+        event.preventDefault();
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -28,7 +33,7 @@ const UpdateSong = (props) => {
             <label>Id</label>
             <input type='number' onChange={(event) => setId(parseFloat(event.target.value))} value={id}/>
             <label>Title</label>
-            <input type='paragraph' onChange={(event) => setTitle(event.target.value)} value={title}/>
+            <input type='text' onChange={(event) => setTitle(event.target.value)} value={title}/>
             <label>Artist</label>
             <input type='name' onChange={(event) => setArtist(event.target.value)} value={artist}/>
             <label>Album</label>

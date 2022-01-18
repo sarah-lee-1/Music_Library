@@ -4,9 +4,8 @@ import axios from 'axios';
 import DisplayMusic from './Components/AllMusic/AllMusic';
 import NavBar from './Components/NavigationBar/NavigationBar';
 import NewSong from './Components/NewSong/NewSong';
-import UpdateSong from './Components/UpdateMusic/UpdateMusic';
+import UpdateSong from './Components/UpdateSong/UpdateSong';
 import SearchSong from './Components/SearchMusic/SearchMusic'; 
-
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -29,20 +28,6 @@ function App() {
     } 
   };
 
-  async function searchSong() {
-    let response = await axios.get('http://127.0.0.1:8000/music/', searchSong);
-    if(response.status === 201) {
-      await getAllSongs;
-    } 
-  };
-
-  async function updateSong() {
-    let response = await axios.put('http://127.0.0.1:8000/music/', updateSong);
-    if(response.status === 201) {
-      await getAllSongs;
-    } 
-  };
-
   async function deleteSong(id) {
     console.log("App.js ID: ", id)
     let response = await axios.delete(`http://127.0.0.1:8000/music/${id}/`);
@@ -53,13 +38,28 @@ function App() {
     } 
   };
 
+  async function reviseSong(changeSong) {
+    let response = await axios.put('http://127.0.0.1:8000/music/', changeSong);
+    if(response.status === 201) {
+      await getAllSongs;
+    } 
+  };
+
+  async function searchSong() {
+    let response = await axios.get('http://127.0.0.1:8000/music/', searchSong);
+    if(response.status === 201) {
+      await getAllSongs;
+    } 
+  };
+
   return (
     <div>
       <NavBar/>
       <DisplayMusic parentEntries={songs} deleteSong={deleteSong}/>
       <NewSong parentEntries={createSong} createSong={createSong}/> 
-      {/* <SearchSong parentEntries={searchSong}/>
-      <UpdateSong parentEntries={updateSong}/>  */}
+      <UpdateSong parentEntries={reviseSong} reviseSong={reviseSong}/>
+      {/* <SearchSong parentEntries={searchSong}/> */} 
+
     </div>
   )
 

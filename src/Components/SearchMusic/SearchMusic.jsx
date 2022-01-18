@@ -19,7 +19,7 @@ const SearchSong = (props) => {
     <table className='table'>
         <thead>
           <tr>
-            <th>Song Id</th>
+            <th>Id</th>
             <th>Title</th>
             <th>Artist</th>
             <th>Album</th>
@@ -37,8 +37,7 @@ const SearchSong = (props) => {
                   <td>{entry.album}</td>
                   <td>{entry.genre}</td>
                   <td>{entry.releaseDate}</td>
-
-                  </tr>
+                </tr>
               );
             })}
         </tbody>

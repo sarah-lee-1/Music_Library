@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-const NewSong = (props) => {
+const UpdateSong = (props) => {
 
+    const [id, setId] = useState('');
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
@@ -9,20 +10,23 @@ const NewSong = (props) => {
     const [releaseDate, setReleaseDate] = useState('');
 
     function handleSubmit(event) {
-       event.preventDefault();
-       let newSong = {
-            title: title,
-            artist: artist,
-            album: album,
-            genre: genre,
-            release_date: releaseDate,  
-       } 
-            console.log(newSong);
-            props.createSong(newSong); 
-    }
+        event.preventDefault();
+        let changeSong = {
+             id: id,
+             title: title,
+             artist: artist,
+             album: album,
+             genre: genre,
+             release_date: releaseDate,  
+        } 
+             console.log(changeSong);
+             props.reviseSong(changeSong); 
+     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <label>Id</label>
+            <input type='number' onChange={(event) => setId(parseFloat(event.target.value))} value={id}/>
             <label>Title</label>
             <input type='paragraph' onChange={(event) => setTitle(event.target.value)} value={title}/>
             <label>Artist</label>
@@ -34,11 +38,10 @@ const NewSong = (props) => {
             <label>Release Date</label>
             <input type='date'onChange={(event) => setReleaseDate(event.target.value)} value={releaseDate}/>
             <button type="submit"> 
-                Add</button>
+                Update</button>
         </form>
     )
 
 }
 
-export default NewSong; 
-// className='btn btn-primary'>
+export default UpdateSong; 

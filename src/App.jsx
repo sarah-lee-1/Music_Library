@@ -21,8 +21,9 @@ function App() {
   };
 
   async function createSong(newSong) {
-    let response = await axios.get('http://127.0.0.1:8000/music/', newSong);
+    let response = await axios.post('http://127.0.0.1:8000/music/', newSong);
     if(response.status === 201) {
+      console.log("New Song Created!")
       await getAllSongs();
     } 
   };
@@ -35,7 +36,7 @@ function App() {
   };
 
   async function updateSong() {
-    let response = await axios.get('http://127.0.0.1:8000/music/', updateSong);
+    let response = await axios.put('http://127.0.0.1:8000/music/', updateSong);
     if(response.status === 201) {
       await getAllSongs;
     } 
@@ -55,8 +56,8 @@ function App() {
     <div>
       <NavBar/>
       <DisplayMusic parentEntries={songs} deleteSong={deleteSong}/>
-      {/* <NewSong parentEntries={createSong}/> 
-      <SearchSong parentEntries={searchSong}/>
+      <NewSong parentEntries={createSong} createSong={createSong}/> 
+      {/* <SearchSong parentEntries={searchSong}/>
       <UpdateSong parentEntries={updateSong}/>  */}
     </div>
   )

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const NewSong = (props) => {
 
-    const [songTitle, setSongTitle] = useState('');
+    const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
     const [genre, setGenre] = useState('');
@@ -11,7 +11,7 @@ const NewSong = (props) => {
     function handleSubmit(event) {
        event.preventDefault();
        let newSong = {
-            songTitle: songTitle,
+            title: title,
             artist: artist,
             album: album,
             genre: genre,
@@ -24,7 +24,7 @@ const NewSong = (props) => {
     return (
             <form onSubmit={handleSubmit}>
             <label>Song Title</label>
-            <input type='paragraph' onChange={(event) => setSongTitle(event.target.value)} value={songTitle}/>
+            <input type='paragraph' onChange={(event) => setTitle(event.target.value)} value={title}/>
             <label>Artist</label>
             <input type='name' onChange={(event) => setArtist(event.target.value)} value={artist}/>
             <label>Album</label>

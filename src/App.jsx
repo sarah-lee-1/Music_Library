@@ -27,9 +27,9 @@ function App() {
     } 
   };
 
-  async function deleteSong(id) {
+  async function deleteSong(changeSong) {
     console.log("App.js ID: ", id)
-    let response = await axios.delete(`http://127.0.0.1:8000/music/${id}/`);
+    let response = await axios.delete(`http://127.0.0.1:8000/music/${changeSong.id}/`), changeSong;
     // if(deleteMsg.confirm('Do you want to delete this entry? '))
     if(response.status === 204) {
       console.log("song deleted!")
@@ -38,14 +38,14 @@ function App() {
   };
 
   async function reviseSong(changeSong) {
-    let response = await axios.put('http://127.0.0.1:8000/music/', changeSong);
+    let response = await axios.put('http://127.0.0.1:8000/music/${changeSong.id}/', changeSong);
     if(response.status === 201) {
       await getAllSongs;
     } 
   };
 
-  async function searchSong() {
-    let response = await axios.get('http://127.0.0.1:8000/music/', searchSong);
+  async function searchSong(searchSong) {
+    let response = await axios.get('http://127.0.0.1:8000/music/${searchSong.id}/', searchSong);
     if(response.status === 201) {
       await getAllSongs;
     } 

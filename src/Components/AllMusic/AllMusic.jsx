@@ -40,7 +40,7 @@ const DisplayMusic = (props) => {
                             <button onClick={() =>
                                 props.deleteSong(entry.id)}
                                 variant="danger"
-                                className="mr-2">Delete</button>
+                                className="del-btn">Delete</button>
                         </tr>
                     );
                 })}
